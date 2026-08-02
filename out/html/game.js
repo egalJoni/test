@@ -1,6 +1,8 @@
 (function() {
+  console.log('in game');
 
-  const $ = require("jquery");
+  window.jQuery = require('jquery')
+  const $ = window.jQuery;
   var game;
   var ui;
 
@@ -255,7 +257,6 @@
   console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
 
   window.onload = function() {
-    console.log($);
     window.dendryUI.loadSettings({show_portraits: false});
     if (window.dendryUI.dark_mode) {
         document.body.classList.add('dark-mode');

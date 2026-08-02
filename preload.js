@@ -10,6 +10,7 @@
 const steamworks = require('steamworks.js');
 
 const client = steamworks.init(3083910);
+console.log("client", client);
 
 window.addEventListener('DOMContentLoaded', () => {
   const replaceText = (selector, text) => {
@@ -26,7 +27,7 @@ window.addEventListener('DOMContentLoaded', () => {
 //   // TODO: on achievement, call steam api...
 window.onAchieve = function(achievementName) {
   console.log(achievementName);
-  if (client.achievement.activate('ACHIEVEMENT')) {
+  if (client.achievement.activate(achievementName)) {
       console.log('steam achievement');
       client.stats.storeStats();
   }
@@ -41,9 +42,10 @@ window.restart = function() {
 
 window.exit = function() {
   if (confirm("Do you wish to exit the game? Progress will not be saved.")) {
-    const { app, BrowserWindow } = require('electron');
-    let w = BrowserWindow.getCurrentWindow();
-    w.close();
+    //const remote = require('electron').remote;
+    //let w = remote.getCurrentWindow();
+    //w.close();
+    window.close();
   }
 };
 
