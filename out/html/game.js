@@ -46,6 +46,30 @@
         window.dendryUI.dendryEngine.goToScene('mod_loader');
     }
   };
+
+  // TODO: update audio displays
+  window.updateAudio = function(song) {
+      var now_playing = document.getElementById('currently_playing');
+      if (song) {
+          var a = song.split('/');
+          now_playing.textContent = a[a.length-1];
+      } else {
+          var s = window.dendryUI.currentAudioURL;
+          var a = s.split('/');
+          now_playing.textContent = a[a.length-1];
+      }
+  };
+
+  // sets the volume
+  window.setVolume = function(volume) {
+      window.dendryUI.volume = volume/100;
+      window.dendryUI.currentAudio.volume = volume/100;
+  };
+
+  // go to the next song - this just sets the time to 9999 lol.
+  window.shuffle = function() {
+      window.dendryUI.currentAudio.currentTime = 9999;
+  };
   
   window.showOptions = function() {
       var save_element = document.getElementById('options');
@@ -260,12 +284,39 @@
      return new Promise(resolve => setTimeout(resolve, ms));
   }
 
+  window.increaseFontSize = function() {
+        window.dendryUI.font_size += 0.1;
+        var fs = window.dendryUI.font_size;
+        var sidebar_fs = fs - 0.1;
+        document.getElementById("content").setAttribute("style", "font-size: " + fs + "em;");
+        document.getElementById("stats_sidebar").setAttribute("style", "font-size: " + sidebar_fs + "em;");
+        //document.getElementById('font_size_value').textContent = window.dendryUI.font_size + "em";
+        window.dendryUI.saveSettings();
+  }
+
+  window.decreaseFontSize = function() {
+        window.dendryUI.font_size -= 0.1;
+        var fs = window.dendryUI.font_size;
+        var sidebar_fs = fs - 0.1;
+        document.getElementById("content").setAttribute("style", "font-size: " + fs + "em;");
+        document.getElementById("stats_sidebar").setAttribute("style", "font-size: " + sidebar_fs + "em;");
+        //document.getElementById('font_size_value').textContent = window.dendryUI.font_size + "em";
+        window.dendryUI.saveSettings();
+  }
+
   window.onload = async function() {
     await sleep(100);
     window.dendryUI.loadSettings({show_portraits: false});
     if (window.dendryUI.dark_mode) {
         document.body.classList.add('dark-mode');
     }
+    if (window.dendryUI.font_size != 1.1) {
+        var fs = window.dendryUI.font_size;
+        var sidebar_fs = fs - 0.1;
+        document.getElementById("content").setAttribute("style", "font-size: " + fs + "em;");
+        document.getElementById("stats_sidebar").setAttribute("style", "font-size: " + sidebar_fs + "em;");
+    }
+    //document.getElementById('font_size_value').textContent = window.dendryUI.font_size + "em";
     window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
   };
 
