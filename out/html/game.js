@@ -256,7 +256,12 @@
   window.dendryModifyUI = main;
   console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
 
-  window.onload = function() {
+  function sleep(ms) {
+     return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  window.onload = async function() {
+    await sleep(100);
     window.dendryUI.loadSettings({show_portraits: false});
     if (window.dendryUI.dark_mode) {
         document.body.classList.add('dark-mode');
