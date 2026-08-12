@@ -7,7 +7,7 @@ const steamworks = require('steamworks.js');
 function createWindow () {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    //autoHideMenuBar: true,
+    autoHideMenuBar: true,
     //width: 1600,
     //height: 900,
     //titleBarStyle: 'hidden',

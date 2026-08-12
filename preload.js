@@ -9,8 +9,14 @@
 
 const steamworks = require('steamworks.js');
 
-const client = steamworks.init(3083910);
-console.log("client", client);
+// TODO: wrap in a try/except block?
+try {
+    const client = steamworks.init(3083910);
+    console.log("client", client);
+} catch (error) {
+    console.error(error);
+    console.log('Steam not detected');
+}
 
 window.addEventListener('DOMContentLoaded', () => {
   const replaceText = (selector, text) => {

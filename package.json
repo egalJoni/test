@@ -24,7 +24,7 @@
     "browserify": "^17.0.1",
     "esmify": "^2.1.1",
     "dendrynexus": "github:aucchen/dendrynexus",
-    "electron": "^37.1.0",
+    "electron": "^41.1.0",
     "electron-builder": "^26"
   },
   "build": {
