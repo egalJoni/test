@@ -62,13 +62,35 @@
 
   // sets the volume
   window.setVolume = function(volume) {
-      window.dendryUI.volume = volume/100;
-      window.dendryUI.currentAudio.volume = volume/100;
+      if (window.dendryUI.currentAudio) {
+          window.dendryUI.volume = volume/100;
+          window.dendryUI.currentAudio.volume = volume/100;
+      }
   };
 
   // go to the next song - this just sets the time to 9999 lol.
   window.shuffle = function() {
-      window.dendryUI.currentAudio.currentTime = 9999;
+      if (window.dendryUI.currentAudio) {
+          window.dendryUI.currentAudio.currentTime = 9999;
+      }
+  };
+
+  // toggles pause or play of music
+  window.togglePausePlay = function() {
+      if (window.dendryUI.currentAudio) {
+          if (window.dendryUI.currentAudio.paused) {
+            window.dendryUI.currentAudio.play();
+            document.getElementById('pause-button-image').style.display = "inline";
+            document.getElementById('play-button-image').style.display = "none";
+            document.getElementById('pause-button');
+            document.getElementById('pause-button-text').textContent = "Pause";
+          } else {
+            window.dendryUI.currentAudio.pause();
+            document.getElementById('play-button-image').style.display = "inline";
+            document.getElementById('pause-button-image').style.display = "none";
+            document.getElementById('pause-button-text').textContent = "Play";
+          }
+      }
   };
   
   window.showOptions = function() {
