@@ -329,6 +329,8 @@
   window.onload = async function() {
     await sleep(100);
     window.dendryUI.loadSettings({show_portraits: false});
+    window.dendryUI.save_prefix = "SocialDemocracyAnAlternateHistory";
+    //window.populateCloudSaves();
     if (window.dendryUI.dark_mode) {
         document.body.classList.add('dark-mode');
     }
@@ -340,6 +342,7 @@
     }
     document.getElementById('font_size_value').textContent = window.dendryUI.font_size.toFixed(1) + "em";
     window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
+    window.populateCloudSaves();
   };
 
 }());

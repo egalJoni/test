@@ -12,8 +12,11 @@ const steamworks = require('steamworks.js');
 // TODO: wrap in a try/except block?
 try {
     const client = steamworks.init(3083910);
+    window.client = client;
     console.log("client", client);
 } catch (error) {
+    const client = null;
+    window.client = client;
     console.error(error);
     console.log('Steam not detected');
 }
@@ -35,7 +38,7 @@ window.onAchieve = function(achievementName) {
   console.log(achievementName);
   if (client.achievement.activate(achievementName)) {
       console.log('steam achievement');
-      client.stats.storeStats();
+      client.stats.store();
   }
 };
 
@@ -51,202 +54,137 @@ window.exit = function() {
     //const remote = require('electron').remote;
     //let w = remote.getCurrentWindow();
     //w.close();
+    //window.uploadAutoSaves();
     window.close();
   }
 };
 
-window.cloudSave = function(filename, data) {
-    if (client.cloud.isEnabledForAccount() && client.cloud.isEnabledForApp()) {
-        if (client.cloud.writeFile(filename, data)) {
-            console.log('Save successful');
-        } else {
-            console.log('Save unsuccessful');
+window.onbeforeunload = function() {
+    window.uploadAutoSaves();
+};
+
+
+window.cloudLoad = function(filename, timestampFilename) {
+    if (client && client.cloud.isEnabledForAccount() && client.cloud.isEnabledForApp()) {
+        if (client.cloud.fileExists(filename) && client.cloud.fileExists(timestampFilename)) {
+            var data = client.cloud.readFile(filename);
+            var timestamp = client.cloud.readFile(timestampFilename);
+            return [data, timestamp];
         }
-    }
-};
-
-window.cloudLoad = function(filename) {
-    if (client.cloud.isEnabledForAccount() && client.cloud.isEnabledForApp()) {
-        if (client.cloud.writeFile(filename, data)) {
-            console.log('Save successful');
-        } else {
-            console.log('Save unsuccessful');
-        }
-    }
-};
-
-
-/////////// Save/load functions
-window.autosave = function() {
-  var oldData = localStorage[window.dendryUI.save_prefix+'_a0'];
-  if (oldData) {
-      localStorage[window.dendryUI.save_prefix+'_a1'] = oldData;
-      localStorage[window.dendryUI.save_prefix+'_timestamp_a1'] = localStorage[window.dendryUI.save_prefix+'_timestamp_a0'];
-  }
-  var slot = 'a0';
-  var saveString = JSON.stringify(window.dendryUI.dendryEngine.getExportableState());
-  localStorage[window.dendryUI.save_prefix + '_' + slot] = saveString;
-  var scene = window.dendryUI.dendryEngine.state.sceneId;
-  var date = new Date(Date.now());
-  date = scene + '\n(' + date.toLocaleString(undefined, window.dendryUI.DateOptions) + ')';
-  localStorage[window.dendryUI.save_prefix +'_timestamp_' + slot] = date;
-  window.dendryUI.populateSaveSlots(slot + 1, 2);
-};
-
-window.quickSave = function() {
-    var saveString = JSON.stringify(window.dendryUI.dendryEngine.getExportableState());
-    localStorage[window.dendryUI.save_prefix + '_q'] = saveString;
-    window.alert('Saved.');
-};
-
-window.saveSlot = function(slot) {
-    var saveString = JSON.stringify(window.dendryUI.dendryEngine.getExportableState());
-    localStorage[window.dendryUI.save_prefix + '_' + slot] = saveString;
-    var scene = window.dendryUI.dendryEngine.state.sceneId;
-    var date = new Date(Date.now());
-    date = scene + '\n(' + date.toLocaleString(undefined, window.dendryUI.DateOptions) + ')';
-    localStorage[window.dendryUI.save_prefix + '_timestamp_' + slot] = date;
-    window.dendryUI.populateSaveSlots(slot + 1, 2);
-};
-
-window.quickLoad = function() {
-    if (localStorage[window.dendryUI.save_prefix + '_q']) {
-      var saveString = localStorage[window.dendryUI.save_prefix + '_q'];
-      window.dendryUI.dendryEngine.setState(JSON.parse(saveString));
-      window.alert('Loaded.');
     } else {
-      window.alert('No save available.');
+        return null;
     }
 };
 
-window.loadSlot = function(slot) {
-    if (localStorage[window.dendryUI.save_prefix + '_' + slot]) {
-      var saveString = localStorage[window.dendryUI.save_prefix + '_' + slot];
-      window.dendryUI.dendryEngine.setState(JSON.parse(saveString));
-      window.dendryUI.hideSaveSlots();
-      window.alert('Loaded.');
-    } else {
-      window.alert('No save available.');
-    }
-};
-
-window.deleteSlot = function(slot) {
-    if (localStorage[window.dendryUI.save_prefix + '_' + slot]) {
-      localStorage[window.dendryUI.save_prefix + '_' + slot] = '';
-      localStorage[window.dendryUI.save_prefix + '_timestamp_' + slot] = '';
-      window.dendryUI.populateSaveSlots(slot + 1, 2);
-    } else {
-      window.alert('No save available.');
-    }
-};
-
-window.exportSlot = function(slot) {
-    if (localStorage[window.dendryUI.save_prefix + '_' + slot]) {
-      var data = localStorage[window.dendryUI.save_prefix + '_' + slot];
-      var a = document.createElement("a");
-      var file = new Blob([data], {type: 'text/plain'});
-      a.href = URL.createObjectURL(file);
-      a.download = 'save.txt';
-      a.click();
-    } else {
-      window.alert('No save available.');
-    }
-};
-
-window.importSave = function(doc_id) {
-  function onFileLoad(e) {
-      var data = e.target.result;
-      window.dendryUI.dendryEngine.setState(JSON.parse(data));
-      window.hideSaveSlots();
-      window.alert('Loaded.');
-  }
-  var uploader = document.getElementById(doc_id);
-  var reader = new FileReader();
-  var file = uploader.files[0];
-  console.log(uploader.files);
-  reader.onload = onFileLoad;
-  reader.readAsText(file);
-};
-
-window.populateSaveSlots = function(max_slots, max_auto_slots) {
-    // this fills in the save information
-    function createLoadListener(i) {
-      return function(evt) {
-        window.loadSlot(i);
-      };
-    }
-
-    function createSaveListener(i) {
-      return function(evt) {
-        window.saveSlot(i);
-      };
-    }
-
-    function createDeleteListener(i) {
-      return function(evt) {
-        window.deleteSlot(i);
-      };
-    }
-
-    function createExportListener(i) {
-      return function(evt) {
-        window.exportSlot(i);
-      };
-    }
-
-    function populateSlot(id) {
-      var save_element = document.getElementById('save_info_' + id);
-      var save_button = document.getElementById('save_button_' + id);
-      var delete_button = document.getElementById('delete_button_' + id);
-      if (localStorage[window.save_prefix + '_' + id]) {
-          var timestamp = localStorage[window.save_prefix+'_timestamp_' + id];
-          save_element.textContent = timestamp;
-          save_button.textContent = "Load";
-          save_button.onclick = createLoadListener(id);
-          delete_button.onclick = createDeleteListener(id);
-      } else {
-          save_button.textContent = "Save";
-          save_element.textContent = "Empty";
-          save_button.onclick = createSaveListener(id);
-      }
-      try {
-          var export_button = document.getElementById('export_button_' + id);
-          if (localStorage[window.save_prefix + '_' + id]) {
-              export_button.onclick = createExportListener(id);
-          }
-      } catch(error) {
-      }
-
-  }
-  for (var i = 0; i < max_slots; i++) {
-      populateSlot(i);
-  }
-  for (i = 0; i < max_auto_slots; i++) {
-      populateSlot('a'+i);
-  }
-
-};
-
-window.showSaveSlots = function() {
-    if (window.dendryUI.dendryEngine.state.disableSaves) {
-        window.alert('Saving and loading is currently disabled.');
+window.onSave = function(save_prefix, slot, saveString, timestamp) {
+    // This is called from dendrynexus when a save is done, and this does a cloud save.
+    // cloud saves make the game feel a little laggy - instead, only upload autosaves when exiting.
+    if (slot.includes('a')) {
         return;
     }
-    var save_element = document.getElementById('save');
-    save_element.style.display = 'block';
-    window.dendryUI.populateSaveSlots(window.dendryUI.max_slots, 2);
-    if (!save_element.onclick) {
-      save_element.onclick = function(evt) {
-        var target = evt.target;
-        var save_element = document.getElementById('save');
-        if (target == save_element) {
-          window.hideSaveSlots();
+    var save_filename = save_prefix + '_' + slot;
+    var date_filename = save_prefix + '_timestamp_' + slot;
+    if (client && client.cloud.isEnabledForAccount() && client.cloud.isEnabledForApp()) {
+        if (client.cloud.writeFile(save_filename, saveString) && client.cloud.writeFile(date_filename, timestamp)) {
+            console.log('Cloud save successful');
+        } else {
+            console.log('Cloud save unsuccessful');
         }
-      };
     }
 };
 
-window.hideSaveSlots = function() {
-    var save_element = document.getElementById('save');
-    save_element.style.display = 'none';
+/////////////////////////
+// cloud save logic:
+// on populating localStorage from cloud storage:
+// - if a cloud file exists for a slot and a local slot doesn't: write the cloud slot to localStorage
+// - if a local slot exists and a cloud one does as well: prompt the user.
+// on saving:
+// - if a local slot exists and a cloud slot doesn't: write the local slot to cloud storage.
+// - write to cloud storage, overwriting cloud storage.
+window.populateCloudSaves = function() {
+  // -1 = localPriority is not set, 1 = prioritize local, 0 = prioritize cloud
+  var localPriority = -1;
+  var max_slots = 8;
+  var max_auto_slots = 2;
+  function getFilename(id) {
+      return window.dendryUI.save_prefix + '_' + id;
+  }
+  function getTimestampFilename(id) {
+      return window.dendryUI.save_prefix + '_timestamp_' + id;
+  }
+  function populateSlot(id) {
+    var filename = getFilename(id);
+    var timestampFilename = getTimestampFilename(id);
+    var result = cloudLoad(filename, timestampFilename);
+    if (result) {
+        var data = result[0];
+        var timestamp = result[1];
+        if (localStorage[timestampFilename] && localStorage[timestampFilename] != timestamp) {
+            if (localPriority == -1) {
+                if (confirm("Warning: cloud saves are different from local saves - overwrite local saves with cloud saves?")) {
+                    localPriority = 0;
+                    localStorage[filename] = data;
+                    localStorage[timestampFilename] = timestamp;
+                } else {
+                    localPriority = 1;
+                }
+            } else if (localPriority == 1) {
+            } else {
+                localStorage[filename] = data;
+                localStorage[timestampFilename] = timestamp;
+            }
+        } else {
+            localStorage[filename] = data;
+            localStorage[timestampFilename] = timestamp;
+        }
+    }
+  }
+  if (client) {
+      console.log("Populating cloud saves...");
+      for (var i = 0; i < max_slots; i++) {
+          populateSlot(i);
+      }
+      for (i = 0; i < max_auto_slots; i++) {
+          populateSlot('a'+i);
+      }
+      window.dendryUI.populateSaveSlots(8, 2);
+  } else {
+      console.log("Can't populate cloud saves - Steam client is not available.");
+  }
+};
+
+// upload autosaves to the cloud when exiting
+window.uploadAutoSaves = function() {
+  var max_slots = 8;
+  var max_auto_slots = 2;
+  function getFilename(id) {
+      return window.dendryUI.save_prefix + '_' + id;
+  }
+  function getTimestampFilename(id) {
+      return window.dendryUI.save_prefix + '_timestamp_' + id;
+  }
+  function uploadSlot(id) {
+    var filename = getFilename(id);
+    var timestampFilename = getTimestampFilename(id);
+    var saveString = localStorage[filename];
+    var timestamp = localStorage[timestampFilename];
+    if (!saveString || !timestamp) {
+        return;
+    }
+    if (client && client.cloud.isEnabledForAccount() && client.cloud.isEnabledForApp()) {
+        if (client.cloud.writeFile(filename, saveString) && client.cloud.writeFile(timestampFilename, timestamp)) {
+            console.log('Cloud save successful');
+        } else {
+            console.log('Cloud save unsuccessful');
+        }
+    }
+  }
+  if (client) {
+      console.log("Uploading cloud saves...");
+      for (i = 0; i < max_auto_slots; i++) {
+          uploadSlot('a'+i);
+      }
+  } else {
+      console.log("Can't upload cloud saves - Steam client is not available.");
+  }
 };
