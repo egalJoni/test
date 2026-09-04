@@ -23,7 +23,7 @@ At the Labor and Socialist International, we can forge contacts with our fratern
 @fr_uk
 subtitle: -1 resources
 choose-if: resources >= 1 and reformist_strength > left_strength
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: [? if: resources < 1: Not enough resources. ?]
 on-arrival: resources -= 1; west_relation += 1; reformist_strength += 5; pacifism += 1; moderate_plan_support += 1
 
 The socialists of France and Britain can influence their governments to be friendlier towards Germany. Hopefully they will reduce our reparations burden.
