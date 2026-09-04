@@ -15,13 +15,14 @@ At the Labor and Socialist International, we can forge contacts with our fratern
 - @scandi: Learn the path of economics and reform from the Scandinavian social democrats.
 - @comintern: Forget the second international - embed a spy in the Comintern's conference.
 - @america: Contact the Socialist party of America.
+- @italy: Improve relations with the Italian Socialist Party.
 - @return: We do not need international contacts at the moment.
 - @easy_discard
 - @cancel_advisor_action
 
 @fr_uk
 subtitle: -1 resources
-choose-if: resources >= 1
+choose-if: resources >= 1; reformist_strength > left_strength
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; west_relation += 1; reformist_strength += 5; pacifism += 1; moderate_plan_support += 1
 
@@ -59,10 +60,17 @@ The Stalinists of the KPD insists on calling us "social fascists", suggesting th
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1
+on-arrival: resources -= 1; west_relation += 1
 
 The Socialist Party of America is tiny and has limited support. There is not much we can do for them, and conversely, not much they can do for us.
 
+@italy
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1; 
+
+The Italian Socialist party has been on the rise recently and may even enter government soon. This will help us improve relations with our southern neighbor.
 @reduce
 
 We do not need the international contacts at the moment.
