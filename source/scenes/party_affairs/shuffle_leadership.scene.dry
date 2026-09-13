@@ -389,6 +389,14 @@ Rudolf Breitscheid is now an advisor.
 @add_adler
 title: Victor Adler
 subtitle: Adler is a well respected party leader and negotiated and one of our foreign policy ledaders. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
+is-card: true
+card-image: img/portraits/Victor_adler.jpg
+view-if: adler_advisor = 0 and n_advisors < 3
+on-arrival: adler_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+tags: center_advisor
+
+Victor Adler is now an Advisor.
 
 # reformist
 
