@@ -70,6 +70,15 @@ go-to: rm_main
 
 Breitscheid has been removed as an advisor. The Centrist faction disapproves.
 
+@remove_adler
+title: Remove Victor Adler
+view-if: adler_advisor = 1
+tags: remove_advisor
+on-arrival: adler_advisor = 0; center_dissent += 10; left_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+Adler has been removed as an Advisor. Party dissent increases.
+
 # reformists
 
 
@@ -376,6 +385,10 @@ go-to: advisor_menu
 tags: center_advisor
 
 Rudolf Breitscheid is now an advisor.
+
+@add_adler
+title: Victor Adler
+subtitle: Adler is a well respected party leader and negotiated and one of our foreign policy ledaders. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
 
 # reformist
 
