@@ -23,7 +23,7 @@ Many different nationalities exist in the empire. We can campaign among them to 
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: republic += 1; workers_sdap_bl += 8*(1-dissent); workers_sdap_bl -= 1 if unemployed >= 25; workers_sdap += 2 if year = 1918; workers_sdap += 3*(1-dissent) if republic = 1 and year <= 1919; workers_spd += 3*(1-dissent) if nationalization_progress >= 1; resources -=1;
+on-arrival: burgenland_support += 1; workers_sdap_hun += 8*(1-dissent); new_middle_sdap_hun += 2; catholics_sdap_hun += 2; unemployed_sdap_hun += 6; workers_sdap_hun -= 1 if unemployed >= 25; workers_sdap_hun += 2 if year = 1918; workers_sdap_hun += 3*(1-dissent) if republic = 1 and year <= 1919; workers_sdap_hun += 3*(1-dissent) if nationalization_progress >= 1; new_middle_sdap_hun += 2 if peoples_party > 0; old_middle_sdap_hun += 2 if peoples_party > 0; catholics_sdap_hun += 1 if peoples_party > 1; resources -= 1;
 
 We have increased our campaigning among the workers. [? if unemployed >= 15: The high levels of unemployment make our campaign more difficult. ?][? if republic = 1 and year >1920: The populance is . ?]
 
