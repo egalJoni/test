@@ -1,6 +1,6 @@
 title: Campaigning
 new-page: true
-on-arrival: week_actions += 1
+on-arrival: week += 2
 max-visits: 36
 is-card: true
 card-image: img/megaphon.jpg
