@@ -2,12 +2,9 @@ title: The State of Slovenes, Croats and Serbs declares independence
 subtitle: A new state appears.
 tags: event
 priority: 3
-view-if: year = 1918 and month = 11 and week = 1
+view-if: year == 1918 and month == 11 and week == 1
 max-visits: 1
-on-arrival: {!
-!}
 new-page: true
-go-to: game_over_1934
 
 = A New Day in Germany
 
