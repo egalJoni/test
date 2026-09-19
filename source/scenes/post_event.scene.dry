@@ -98,6 +98,11 @@ if (Q.dissent < 0) {
     Q.dissent = 0.95;
 }
 
+if (Q.week >= 5) {
+        Q.week = 1;
+        Q.month += 1;
+    }
+
 // 1. update dates
 if (Q.week_actions >= 1) {
     Q.time += 1;
