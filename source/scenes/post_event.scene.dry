@@ -22,8 +22,6 @@ if (Q.pro_republic < 0) {
 if (Q.pro_republic >= 100) {
     Q.pro_republic = 99;
 }
-if (Q.week >= 4)
-    Q.week = 1; month + 1;
 // re-calculate party support
 // calculate normalized class voting for the achievements
 for (var c of Q.classes) {
