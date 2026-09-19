@@ -47,7 +47,7 @@ max-cards: 4
 
 @party
 title: Party Affairs
-card-image: img/volkwien.jpg
+card-image: out/html/img/volkwien.jpg
 is-deck: true
 
 - #party_affairs
