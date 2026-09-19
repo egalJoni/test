@@ -12,6 +12,46 @@ for (var c of Q.classes) {
     }
 }
 
+// Recalculate party support
+// Normalize class voting for the achievements
+for (var c of Q.classes) {
+    var class_votes = 0;
+
+    if (Q.week_actions >= 1) {
+    // Keep dividing by 2 until all values are under 1000
+        let needs_scaling = true;
+        while (needs_scaling) {
+            needs_scaling = false;
+            for (var party of Q.parties) {
+                if (Q[c+'_'+party] > 500) {
+                    needs_scaling = true;
+                    break; // If any value is too high, we'll rescale
+                }
+            }
+
+            if (needs_scaling) {
+                for (var party of Q.parties) {
+                    Q[c+'_'+party] /= 2;
+                }
+            }
+        }
+    }
+
+    // Calculate total class votes
+    for (var party of Q.parties) {
+        if (Q[c+'_'+party] < 0) {
+            Q[c+'_'+party] = 0;
+        }
+        class_votes += Q[c+'_'+party];
+    }
+
+    // Normalize class votes
+    for (var party of Q.parties) {
+        Q[c + '_' + party + '_normalised'] = 100 * Q[c+'_'+party] / class_votes;
+        Q[c + '_' + party + '_display'] = (100 * Q[c+'_'+party] / class_votes).toFixed(1);
+    }
+}
+
 Q.pro_republic = Math.round(Q.pro_republic);
 Q.nationalism = Math.round(Q.nationalism);
 Q.socialism = Math.round(Q.socialism);
@@ -97,11 +137,6 @@ if (Q.dissent < 0) {
 } else if (Q.dissent > 0.95) {
     Q.dissent = 0.95;
 }
-
-if (Q.week >= 5) {
-        Q.week = 1;
-        Q.month += 1;
-    }
 
 // 1. update dates
 if (Q.week_actions >= 1) {
