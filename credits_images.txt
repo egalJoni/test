@@ -16,7 +16,7 @@ volkwien.jpg: Volk von Wien - Wählet sozialdemokratisch,Werbung (Wahl), Wahl zu
 
 wahl.jpg: Werbung (Wahl), Wahl zur konstituierenden Nationalversammlung am 16.2.1919 & Nationalratswahl 16.02.1919, 1919.02.16, Österreich · 1 (Teil) · Maße des Objekts: Höhe: 94 cm - Breite: 64 cm, Austrian National Library, https://onb.digital/result/112FE38A
 
-reichsbanner.jpg: Berlin, Kundgebung Des Reichsbanners Im Lustgarten. 3 Mar. 1928. German Federal Archives, Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_102-05611,_Berlin,_Kundgebung_des_Reichsbanners_im_Lustgarten.jpg. CC-BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/de/deed.en
+enemies.jpg: Werbung (Wahl), Nationalratswahl 1920, 1920.10.17, Österreich · Maße des Objekts: Höhe: 122 cm - Breite: 95 cm Austrian National Library, Biró, Mihály, https://onb.digital/result/112FC41C
 
 stahlhelm.jpg: Berlin, Lustgarten, Stahlhelmaufmarsch. 3 Mar. 1931. German Federal Archives, Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_102-11416,_Berlin,_Lustgarten,_Stahlhelmaufmarsch.jpg. CC-BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/de/deed.en
 
