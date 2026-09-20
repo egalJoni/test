@@ -5,7 +5,8 @@ priority: 3
 view-if: year == 1918 and month == 11 and week == 1
 max-visits: 1
 new-page: true
+on-arrival: shs_seen = 1
 
-= A New Day in Germany
+= A New State declares independence
 
-After the death of Hindenburg and the presidential election of 1934, it seems as if an era of history is closing. The worst years of political and economic crisis are over, and Nazism's days are numbered. Perhaps Germany will finally enter into a new era of genuine peace...
+In the southern regions of the empire inhabited by slavic people, the national council of Slovenes, Croats and Serbs has declared independence.
