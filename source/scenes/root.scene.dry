@@ -69,6 +69,10 @@ Q.reformists_resigned = 0;
 // have we discovered neorevisionism?
 Q.neorevisionism = 0;
 
+// adivors
+Q.Victor_alive = 1;
+Q.Friedrich_pardoned = 0;
+
 // crisis_urgency indicates how seriously the SPD is taking the economic crisis - scale from 0 to 10.
 Q.crisis_urgency = 0;
 // nazi_urgency indicates how seriously the SPD takes the nazis - scale from 0 to 10.
