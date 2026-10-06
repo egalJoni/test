@@ -3,7 +3,7 @@ is-pinned-card: true
 tags: advisor, centrist
 card-image: img/portraits/Victor_Adler.jpg
 new-page: true
-view-if: adler_advisor = 1
+view-if: Victor_Adler_advisor = 1
 
 = Victor Adler
 
