@@ -506,8 +506,8 @@ title: Friedrich Adler
 subtitle: Rudolf Breitscheid comes from a well-educated background and is one of our foreign policy leaders. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
 is-card: true
 card-image: img/portraits/Friedrich_Adler.jpg
-view-if: Friedrich_Adler_advisor = 0 and n_advisors < 3 
-choose-if: Friedrich_pardoned = 1
+view-if: Friedrich_Adler_advisor = 0 and n_advisors < 3 and Friedrich_sdap = 1
+choose-if: Friedrich_pardoned = 1 and Friedrich_sdap = 1
 unavailable-subtitle: Friedrich Adler is currently serving his prison sentence
 on-arrival: Friedrich_Adler_advisor = 1; n_advisors += 1
 go-to: advisor_menu
