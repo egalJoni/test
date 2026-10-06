@@ -2,7 +2,7 @@ title: Friedrich Adler pardoned
 new-page: true
 subtitle: The Kaiser has pardoned left wing social democrat Friedrich Adler
 tags: event
-view-if: year = 1918 and month = 11 and week = 1
+view-if: year == 1918 and month == 11 and week == 1
 max-visits: 1
 on-arrival: Friedrich_pardoned == 1
 face-image: img/redfront.jpg
