@@ -193,6 +193,7 @@ Catholics: SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, KPD
 Support for the Republic: [+ pro_republic_disp +]%
 
 @test
+view-if: year == 1918
 on-arrival: {!
 Q.pro_republic_disp = Math.round(Q.pro_republic);
 Q.nationalism_disp = Math.round(Q.nationalism);
