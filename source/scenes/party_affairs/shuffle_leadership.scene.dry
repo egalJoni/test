@@ -70,11 +70,11 @@ go-to: rm_main
 
 Breitscheid has been removed as an advisor. The Centrist faction disapproves.
 
-@remove_adler
+@remove_Victor_Adler
 title: Remove Victor Adler
-view-if: adler_advisor = 1
+view-if: Victor_Adler_advisor = 1 and Victor_alive = 1
 tags: remove_advisor
-on-arrival: adler_advisor = 0; center_dissent += 10; left_dissent += 5; n_advisors -= 1
+on-arrival: Victor_Adler_advisor = 0; center_dissent += 10; left_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
 Adler has been removed as an Advisor. Party dissent increases.
@@ -196,14 +196,14 @@ go-to: rm_main
 
 Seydewitz has been removed as an advisor. The Leftist faction disapproves.
 
-@remove_siemsen
-title: Remove Siemsen
-view-if: siemsen_advisor = 1
+@remove_Friedrich_Adler
+title: Friedrich Adler
+view-if: Friedrich_Adler_advisor = 1
 tags: remove_advisor
-on-arrival: siemsen_advisor = 0; left_dissent += 3; n_advisors -= 1
+on-arrival: Friedrich_Adler_advisor = 0; left_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Siemsen has been removed as an advisor. The Leftist faction disapproves.
+Friedrich Adler has been removed as an advisor. The Left faction disapproves.
 
 
 
@@ -386,13 +386,13 @@ tags: center_advisor
 
 Rudolf Breitscheid is now an advisor.
 
-@add_adler
+@add_Victor_Adler
 title: Victor Adler
-subtitle: out/html/img/portraits/Victor_Adler.jpg Adler is a well respected party leader and negotiated and one of our foreign policy ledaders. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
+subtitle: Adler is a well respected party leader and negotiated and one of our foreign policy ledaders. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
 is-card: true
 card-image: img/portraits/Victor_Adler.jpg
-view-if: adler_advisor = 0 and n_advisors < 3
-on-arrival: adler_advisor = 1; n_advisors += 1
+view-if: Victor_Adler_advisor = 0 and n_advisors < 3 and Victor_alive = 1
+on-arrival: Victor_Adler_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 tags: center_advisor
 
@@ -501,18 +501,19 @@ tags: left_advisor
 
 Max Seydewitz is now an advisor.
 
-@add_siemsen
-title: Anna Siemsen
-subtitle: Anna Siemsen is an and educational reform advocate and pacifist, who was one of the few German women to receive a PhD in the pre-war period. {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Pacifism, Educational Curriculum, Educational Structure ?]
+@add_friedrich
+title: Friedrich Adler
+subtitle: Rudolf Breitscheid comes from a well-educated background and is one of our foreign policy leaders. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
 is-card: true
-card-image: img/portraits/SiemsenAnna.jpg
-view-if: siemsen_advisor = 0 and n_advisors < 3 and left_split = 0
-on-arrival: siemsen_advisor = 1; n_advisors += 1; left_strength += 5
+card-image: img/portraits/Friedrich_Adler.jpg
+view-if: Friedrich_Adler_advisor = 0 and n_advisors < 3 
+choose-if: Friedrich_pardoned = 1
+unavailable-subtitle: Friedrich Adler is currently serving his prison sentence
+on-arrival: Friedrich_Adler_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 tags: left_advisor
 
-Anna Siemsen is now an advisor.
-
+Friedrich is now an advisor.
 
 
 # labor
