@@ -10,3 +10,11 @@ on-arrival: shs_seen = 1
 = A New State declares independence
 
 In the southern regions of the empire inhabited by slavic people, the national council of Slovenes, Croats and Serbs has declared independence.
+
+-@ok: There isnt a lot when can do about this,
+
+@ok
+on-arrival: resources += 1
+
+Lets see how this developes.
+
