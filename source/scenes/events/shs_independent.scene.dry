@@ -5,7 +5,7 @@ priority: 3
 view-if: year == 1918 and month == 11 and week == 1
 max-visits: 1
 new-page: true
-on-arrival: shs_seen = 1; Friedrich_pardon = 1, Friedrich_sdap = 1
+on-arrival: shs_seen = 1; Friedrich_pardon = 1; Friedrich_sdap = 1
 
 = A New State declares independence
 
