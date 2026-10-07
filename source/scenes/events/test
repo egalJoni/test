@@ -5,7 +5,7 @@ priority: 3
 view-if: year == 1918 and month == 8 and week == 1
 max-visits: 1
 new-page: true
-on-arrival: <button class="tab_button" id="test" onclick="window.changeTab('status.test', 'test');" style="display: none;">test</button>
+on-arrival: test = 1
 
 = test
 test
