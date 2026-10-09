@@ -10,11 +10,6 @@ if (Q.advisor_action_timer <= 0) {
 }
 !}
 max-cards: 3
-{!
-if (Q.monarchy == 1) {
-set-bg: img/Map_AuHu.jpg
-}
-!}
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
@@ -37,11 +32,6 @@ if (Q.advisor_action_timer <= 0) {
 }
 !}
 max-cards: 4
-{!
-if (Q.monarchy == 1) {
-set-bg: img/Map_AuHu.jpg
-}
-!}
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
@@ -63,7 +53,7 @@ is-deck: true
 @govt
 title: Government Affairs
 view-if: time >= 6
-card-image: img/reichstag_2.jpg
+card-image: img/Parla.jpg
 is-deck: true
 
 - #govt_affairs
