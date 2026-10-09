@@ -1,5 +1,4 @@
 title: Next month
-set-bg: img/map_2.jpg
 is-hand: true
 on-arrival: {!
 if (Q.advisor_action_timer <= 0) {
@@ -9,6 +8,7 @@ if (Q.advisor_action_timer <= 0) {
 } else {
     Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
 }
+if (Q.monarchy == 1) {set-bg: img/Map_AuHu.jpg}
 !}
 max-cards: 3
 
