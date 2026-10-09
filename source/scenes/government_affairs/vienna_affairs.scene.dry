@@ -1,15 +1,15 @@
-title: The Prussian Bulwark
+title: Viennese Affairs
 new-page: true
 is-card: true
-view-if: spd_prussia = 1 and prussian_affairs_timer <= 0
+view-if: sdap_vienna = 1 and vienna_affairs_timer <= 0
 on-arrival: prussian_affairs_timer += 6; month_actions += 1
 tags: govt_affairs
-card-image: img/braun.jpg
-#subtitle: The state government of Prussia is a bulwark of democracy...
+card-image: img/Mauer.jpg
+#subtitle: Vienna is governed by us
 
 = Prussian Affairs
 
-Prussia, by far the largest and most important state in Germany, is governed by our party, in a coalition with the Center and Democratic parties. It is the most stable and democratic state government in Germany, led by the able Otto Braun.
+Vienna, being the capital and by far largest city in Austria with roughly 2 million inhabitants, that make up almost a third of the population of Austria, is now governed by us. It is now our task to transform Vienna into the social democratic stronghold that it could become.
 
 We can enact policies in Prussia.
 
