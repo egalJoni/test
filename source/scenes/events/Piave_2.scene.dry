@@ -5,11 +5,12 @@ priority: 3
 view-if: year == 1918 and month == 6 and week == 3
 max-visits: 1
 new-page: true
+face-image: img/Soldaten.jpg
 on-arrival: piave = 2
 
 = Another Offensive
 
-On the 15th of June <span style="color: #ffd919;">K.</span><span style ="color: #000000;">u.</span><span style="color: #ce2939;">K.</span> troops begin another offfensive on the <span style="color: #008C45;">It</span><span style ="color:#F4F9FF;">al</span><span style="color: #CD212A;">ian</span> front, specifically attempting to cross the Piave river. 
+On the 15th of June <span style="color: #ffd919;">K.</span><span style ="color: #000000;">u.</span><span style="color: #477050t;">K.</span> troops begin another offfensive on the <span style="color: #008C45;">It</span><span style ="color:#F4F9FF;">al</span><span style="color: #CD212A;">ian</span> front, specifically attempting to cross the Piave river. 
 
 - @hope: We can only hope the best for our soldiers
 
@@ -21,6 +22,7 @@ We can only hope that this battle goes well for our armies
 
 @result
 on-arrival: workers_sdap += 4; soldiers_sdap +=6
+face-image: img/Feind_Piave.jpg
 
 **Defeat**
 
