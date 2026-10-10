@@ -5,6 +5,7 @@ priority: 3
 view-if: year == 1918 and month == 6 and week == 3
 max-visits: 1
 new-page: true
+on-arrival: piave = 2
 
 = Another Offensive
 
