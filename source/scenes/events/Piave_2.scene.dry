@@ -10,11 +10,14 @@ On the 15th of June <span style="color: #ffd919;">K.</span><span style ="color: 
 - @hope: We can only hope the best for our soldiers
 
 @hope
+
 We can only hope that this battle goes well for our armies
 
 - @result: Lets see the result of the offensive
 
 @result
+on-arrival: workers_sdap += 4; soldiers_sdap +=6
+
 **Defeat**
 
 The offensive ends in defeat. Although initial victories were made, our forces were eventually pushed back to their original postitions by the enemy. The heavy {!<span class="tooltip-text" title="over 80.000 wounded">casualties</span>!} on our side make another offensive on this front unlikely, as our army will likely be fighting on the defensive for the rest of the war.
