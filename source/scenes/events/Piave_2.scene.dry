@@ -1,0 +1,21 @@
+title: Austrian Offensive in Italy
+subtitle: Our soldiers attempt to break the enemies lines
+view-if: year == 1918 and month == 6 and week == 2 
+max-visits: 1
+tags: event
+new-page: true
+
+On the 15th of June <span style="color: #ffd919;">K.</span><span style ="color: #000000;">u.</span><span style="color: #ce2939;">K.</span> troops begin another offfensive on the <span style="color: #008C45;">It</span><span style ="color:#F4F9FF;">al</span><span style="color: #CD212A;">ian</span> front, specifically attempting to cross the Piave river. 
+
+- @hope: We can only hope the best for our soldiers
+
+@hope
+We can only hope that this battle goes well for our armies
+
+- @result: Lets see the result of the offensive
+
+@result
+**Defeat**
+
+The offensive ends in defeat. Although initial victories were made, our forces were eventually pushed back to their original postitions by the enemy. The heavy {!<span class="tooltip-text" title="over 80.000 wounded">casualties</span>!} on our side make another offensive on this front unlikely, as our army will likely be fighting on the defensive for the rest of the war.
+
