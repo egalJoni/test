@@ -37,7 +37,12 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 Chancellor: [+ chancellor +] ([+ chancellor_party +])
 
-Reichstag composition:
+[? if reichsrat == 1: Reichsrat Abgeordnetenhaus composition: ?]
+
+[? if reichsrat == 1: <span style= "color: #dc021b;">Club of German Social Democrats (SDAP)</span>: 49 Seats ?]
+[? if reichsrat == 1: <span style= "color: #dc021b;">Club of Bohemian social democrats (SDAP)</span>: 25 Seats ?]
+[? if reichsrat == 1: <span style= "color: #dc021b;">Club Of Polish Social Democrats (SDAP)</span>: 9 Seats ?]
+[? if reichsrat == 1: <span style="color: #000000;">Christian Social Union (CSP)</span>: 73 Seats ?]
 
 # 1928: 30, 1930: 25, 1932: 22
 {!<span class="tooltip-text" title="Social Democratic Party of Germany">SPD</span>!}: [+ spd_r +]%
