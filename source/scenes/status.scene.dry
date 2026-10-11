@@ -37,7 +37,7 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 Chancellor: [+ chancellor +] ([+ chancellor_party +])
 
-[? if reichsrat == 1: Reichsrat Abgeordnetenhaus composition ?]
+[? if reichsrat == 1: Reichsrat Abgeordnetenhaus composition: ?]
 
 [? if reichsrat == 1: <span style= "color: #dc021b;">Club of German Social Democrats (SDAP)</span>: 49 Seats ?]
 [? if reichsrat == 1: <span style= "color: #dc021b;">Club of Bohemian social democrats (SDAP)</span>: 25 Seats ?]
