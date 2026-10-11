@@ -31,7 +31,7 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 = Government
 
-[? if one_president == 1:  President: [+ president +] ?]
+[? if one_president == 1: President ?]
 
 Chancellor: [+ chancellor +] ([+ chancellor_party +])
 
