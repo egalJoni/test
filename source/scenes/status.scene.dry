@@ -31,7 +31,7 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 = Government
 
-President: [+ president +]
+[? if year > 1919 && month >= 2 && week >= 2:  President: [+ president +] ?]
 
 Chancellor: [+ chancellor +] ([+ chancellor_party +])
 
