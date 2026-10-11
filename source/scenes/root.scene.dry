@@ -29,7 +29,7 @@ Q.week_actions = 0;
 
 //is there a monarchy?
 Q.monarchy = 1;
-Q.reichsrats = 1;
+Q.reichsrat = 1;
 
 // 0 = normal difficulty, 1 = hard mode, 2 = hard mode no saves
 Q.difficulty = 0;
@@ -73,7 +73,7 @@ Q.reformists_resigned = 0;
 // have we discovered neorevisionism?
 Q.neorevisionism = 0;
 
-// adivors
+// advisors
 Q.Victor_alive = 1;
 Q.Friedrich_pardoned = 0;
 Q.Friedrich_sdap = 0;
