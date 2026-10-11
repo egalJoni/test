@@ -6,7 +6,7 @@ view-if: year == 1918 and month == 11 and week == 1
 max-visits: 1
 new-page: true
 face-image: img/SHS1.jpg
-on-arrival: shs_seen = 1; Friedrich_pardoned = 1; Friedrich_sdap = 1; one_president = 1
+on-arrival: shs_seen = 1; Friedrich_pardoned = 1; Friedrich_sdap = 1; one_president = 1; monarchy = 0
 
 = A New State declares independence
 
