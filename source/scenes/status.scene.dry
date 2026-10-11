@@ -39,11 +39,8 @@ Chancellor: [+ chancellor +] ([+ chancellor_party +])
 
 [? if reichsrat == 1: Reichsrat Abgeordnetenhaus composition: ?]
 
-<span class="tooltip-text" title="Club of German social democrats: 49 seats      Club of Bohemian social democrats: 25 seats     Club of Polish social democrats: 9 Seats" style="color: #dc021b;">**Social democratic workers party (SDAP)**</span>
-[? if reichsrat == 1: <span style= "color: #dc021b;">Club of German Social Democrats (SDAP)</span>: 49 Seats ?]
-[? if reichsrat == 1: <span style= "color: #dc021b;">Club of Bohemian social democrats (SDAP)</span>: 25 Seats ?]
-[? if reichsrat == 1: <span style= "color: #dc021b;">Club Of Polish Social Democrats (SDAP)</span>: 9 Seats ?]
-[? if reichsrat == 1: <span style="color: #000000;">Christian Social Union (CSP)</span>: 73 Seats ?]
+<span class="tooltip-text" title="Club of German social democrats: 49 seats   I   Club of Bohemian social democrats: 25 seats   I   Club of Polish social democrats: 9 Seats" style="color: #dc021b;">**Social democratic workers party (SDAP)**</span>
+[? if reichsrat == 1: <span style="color: #000000;">**Christian Social Union** (**CSP**)</span>: 73 Seats ?]
 
 # 1928: 30, 1930: 25, 1932: 22
 {!<span class="tooltip-text" title="Social Democratic Party of Germany">SPD</span>!}: [+ spd_r +]%
