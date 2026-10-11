@@ -74,6 +74,7 @@ Breitscheid has been removed as an advisor. The Centrist faction disapproves.
 title: Remove Victor Adler
 view-if: Victor_Adler_advisor = 1 and Victor_alive = 1
 tags: remove_advisor
+face-image: <div class="Panel-img"><img src="img/portraits/Victor_Adler.jpg"></div>
 on-arrival: Victor_Adler_advisor = 0; center_dissent += 10; left_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
@@ -340,7 +341,7 @@ view-if: n_advisors < 3
 
 @add_hilferding
 title: Rudolf Hilferding
-subtitle: Rudolf Hilferding is an economist and one of our chief Marxist theoreticians. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
+subtitle: <div class="Panel-img"><img src="img/portraits/BraunOtto.jpg"></div> Rudolf Hilferding is an economist and one of our chief Marxist theoreticians. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
 is-card: true
 card-image: img/portraits/HilferdingRudolf.jpg
 tags: center_advisor
@@ -509,6 +510,7 @@ card-image: img/portraits/Friedrich_Adler.jpg
 view-if: Friedrich_Adler_advisor = 0 and n_advisors < 3 and Friedrich_sdap = 1
 choose-if: Friedrich_pardoned = 1 and Friedrich_sdap = 1
 unavailable-subtitle: Friedrich Adler is currently serving his prison sentence
+face-image: img/portraits/Friedrich_Adler.jpg
 on-arrival: Friedrich_Adler_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 tags: left_advisor
