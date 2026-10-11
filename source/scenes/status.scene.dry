@@ -39,7 +39,7 @@ Chancellor: [+ chancellor +] ([+ chancellor_party +])
 
 [? if reichsrat == 1: Reichsrat Abgeordnetenhaus composition: ?]
 
-[? if reichsrat == 1: <span class="tooltip-text" title="Club of German social democrats: 49 Seats      Club of Bohemian social democrats: 25 Seats     Club of Polish social democrats: 9 Seats">**<span style= "color: #dc021b;">Social Democratic Workers Party</span>(<span style= "color: #dc021b;">SDAP</span>)**</span> ?]
+<span class="tooltip-text" title="Club of German social democrats: 49 seats      Club of Bohemian social democrats: 25 seats     Club of Polish social democrats: 9 Seats" style="color: #dc021b;">**Social democratic workers party (SDAP)**</span>
 [? if reichsrat == 1: <span style= "color: #dc021b;">Club of German Social Democrats (SDAP)</span>: 49 Seats ?]
 [? if reichsrat == 1: <span style= "color: #dc021b;">Club of Bohemian social democrats (SDAP)</span>: 25 Seats ?]
 [? if reichsrat == 1: <span style= "color: #dc021b;">Club Of Polish Social Democrats (SDAP)</span>: 9 Seats ?]
