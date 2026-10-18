@@ -1,0 +1,42 @@
+title: Julius Deutsch
+is-pinned-card: true
+tags: advisor, austromarxist
+card-image: img/portraits/Julius_Deutsch.jpg
+view-if: deutsch_advisor = 1
+new-page: true 
+
+= Julius Deutsch
+
+A Great War veteran, pacifist and a austromarxist leader, Julius Deutsch is one of our experts in military affairs and workers sports.
+- @sports
+- @develop_schutzbund
+- @finalize_schutzbund
+- @root: Return to main
+
+@sports
+title: Workers sports
+subtitle: We can fund workers sports organizations
+choose-if: advisor_action_timer = 0 
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] 
+on-arrival: advisor_action_timer = 6; sport_organizations += 1; sb_strength += 25; sb_militancy += 0.05; workers_sdap += 4
+#view-if: difficulty < 1
+
+We have funded organizations like the [? if year == 1918: Östereichischer Arbeiter-Turnerbund ?][? if year >= 1919 and year <= 1923: Verband der Arbeiter- und Soldatensportvereinigungen ?][? if year >= 1924: Arbeiterbund für Sport- und Körperkultur in Österreich ASKÖ ?]. This helps in forging a militant working class. 
+
+@develop_schutzbund
+title: Developing a defence organization
+subtitle: Deutsch can work on developing a defence organization of the [party.
+view-if: develop_sb_available = 1
+choose-if: advisor_action_timer = 0  
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; sb_progress += 1;
+
+Deutsch works on creating a self defence organization for the [? if sdap_ideology = "centrist" or sdap_ideology = "reformist" and spo_formed == 0: <span style= "color: #dc021b;">[+ sdap_name +]</span> ?][if sdap_ideology = "left" or sdap_ideology = "austromarxist" and spo_formed == 0: <span style= "color: #b82e2e;">[+ sdap_name +]</span> ?][? if spo_formed == 1: <span style= "color: #E52B50;">[+ spo_name +]</span> ?] .
+
+@finalize_schutzbund
+title: Finalize our plans for a self defence organization.
+subtitle: Call for a limited program of job creation without deficit spending.
+choose-if: advisor_action_timer = 0 and moderate_plan_adopted = 0 and black_thursday_seen = 1
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if moderate_economic_plan = 0 : We have already adopted the reformist economic plan. ?] [? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?]
+on-arrival: advisor_action_timer = 6
+go-to: crisis_program.support_moderate
