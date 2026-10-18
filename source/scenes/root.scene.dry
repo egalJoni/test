@@ -80,6 +80,8 @@ Q.Friedrich_sdap = 0;
 
 // paramilitaries
 Q.schutzbund_formed = 0;
+Q.sb_strength = 0;
+Q.sb_militancy = 0;
 
 // crisis_urgency indicates how seriously the SPD is taking the economic crisis - scale from 0 to 10.
 Q.crisis_urgency = 0;
