@@ -42,7 +42,7 @@ We have increased funding to Workers' Welfare. [? if black_thursday_seen > 0 : I
 choose-if: resources > 0
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
-on-arrival: resources -= 1; sport_organizations += 1; sb_strength += 25; sb_militancy += 0.05
+on-arrival: resources -= 1; sport_organizations += 1; sb_strength += 15; sb_militancy += 0.03; workers_sdap += 3
 
 It is not enough for the SPD to solely be a political party. The Worker Singer's League, Worker's Sports, and our schools and libraries are crucial to our members' lives. Funding these organizations makes our members more committed to the party, even when our policies might not be to their liking.
 
