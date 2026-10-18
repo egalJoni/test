@@ -120,16 +120,16 @@ go-to: rm_main
 Pfülf has been removed as an advisor. The Reformist faction disapproves.
 
 
-# labor
+# austromarxist
 
-@remove_leipart
-title: Remove Leipart
-view-if: leipart_advisor = 1
+@remove_deutsch
+title: Remove Deutsch
+view-if: deutsch_advisor = 1
 tags: remove_advisor
-on-arrival: leipart_advisor = 0; labor_dissent += 5; n_advisors -= 1
+on-arrival: deutsch_advisor = 0; austromarxist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Leipart has been removed as an advisor. The Labor faction disapproves.
+Leipart has been removed as an advisor. The Austromarxist faction disapproves.
 
 @remove_aufhauser
 title: Remove Aufhäuser
@@ -303,7 +303,7 @@ frequency: 1
 - @centrist: Add Centrists
 - @left: Add Leftists
 - @reformist: Add Reformists
-- @labor: Add Austromarxists
+- @austromarxist: Add Austromarxists
 - @neorev: Add Neorevisionists
 - @nonfactional: Add non-factional advisors
 - @rm_main: Remove advisors instead.
@@ -324,9 +324,10 @@ view-if: n_advisors < 3
 
 - #left_advisor
 
-@labor
+@austromarxist
 view-if: n_advisors < 3
 
+- #austromarxist_advisor
 - #labor_advisor
 
 @neorev
@@ -518,19 +519,19 @@ tags: left_advisor
 Friedrich is now an advisor.
 
 
-# labor
+# austromarxist
 
-@add_leipart
-title: Theodor Leipart
-subtitle: Theodor Leipart is the leader of the ADGB, the German Trade Union Federation. {!<br><br>!}Actions - Organizing Workers, Addressing the Economic Crisis
+@add_deutsch
+title: Julius Deutsch
+subtitle: Julius Deutsch is a great war veteran and our leading expert on military affairs. {!<br><br>!}Actions - Workers sport, Develpoing a self defence organization, finalizing a self defence organization, Schutzbund affairs, Red guard affairs, Volkswehr, Bundesheer
 is-card: true
-card-image: img/portraits/LeipartTheodor.jpg
-tags: labor_advisor
-view-if: leipart_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: leipart_advisor = 1; n_advisors += 1; labor_strength += 5
+card-image: img/portraits/Julius_Deutsch.jpg
+tags: austromarxist_advisor
+view-if: deutsch_advisor = 0 and n_advisors < 3 and unions_independent = 0
+on-arrival: deustch_advisor = 1; n_advisors += 1; austromarxist_strength += 5
 go-to: advisor_menu
 
-Theodor Leipart is now an advisor.
+Julius Deutsch is now an advisor.
 
 @add_aufhauser
 title: Siegfried Aufhäuser
