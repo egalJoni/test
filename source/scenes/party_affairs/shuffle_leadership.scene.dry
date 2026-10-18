@@ -120,54 +120,44 @@ go-to: rm_main
 Pfülf has been removed as an advisor. The Reformist faction disapproves.
 
 
-# austromarxist
+# labor
 
 @remove_leipart
 title: Remove Leipart
 view-if: leipart_advisor = 1
 tags: remove_advisor
-on-arrival: leipart_advisor = 0; austromarxist_dissent += 5; n_advisors -= 1
+on-arrival: leipart_advisor = 0; labor_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Leipart has been removed as an advisor. The Austromarxist faction disapproves.
+Leipart has been removed as an advisor. The Labor faction disapproves.
 
 @remove_aufhauser
 title: Remove Aufhäuser
 view-if: aufhauser_advisor = 1
 tags: remove_advisor
-on-arrival: aufhauser_advisor = 0; austromarxist_dissent += 5; n_advisors -= 1
+on-arrival: aufhauser_advisor = 0; labor_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Aufhäuser has been removed as an advisor. The Austromarxist faction disapproves.
+Aufhäuser has been removed as an advisor. The Labor faction disapproves.
 
 @remove_wissell
 title: Remove Wissell
 view-if: wissell_advisor = 1
 tags: remove_advisor
-on-arrival: wissell_advisor = 0; austromarxist_dissent += 3; n_advisors -= 1
+on-arrival: wissell_advisor = 0; labor_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Wissell has been removed as an advisor. The Austromarxist faction disapproves.
+Wissell has been removed as an advisor. The Labor faction disapproves.
 
 
 @remove_woytinsky
 title: Remove Woytinsky
 view-if: woytinsky_advisor = 1
 tags: remove_advisor
-on-arrival: woytinsky_advisor = 0; austromarxist_dissent += 3; n_advisors -= 1
+on-arrival: woytinsky_advisor = 0; labor_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Woytinsky has been removed as an advisor. The Austromarxist faction disapproves.
-
-@remove_deutsch
-title: Remove Deutsch
-view-if: deutsch_advisor = 1
-tags: remove_advisor
-on-arrival: deutsch_advisor = 0; austromarxist_dissent += 3; n_advisors -= 1
-go-to: rm_main
-
-Deutsch has been removed as an advisor. The Austromarxist faction disapproves.
-
+Woytinsky has been removed as an advisor. The Labor faction disapproves.
 
 # left
 
@@ -313,7 +303,7 @@ frequency: 1
 - @centrist: Add Centrists
 - @left: Add Leftists
 - @reformist: Add Reformists
-- @austromarxist: Add Austromarxists
+- @labor: Add Austromarxists
 - @neorev: Add Neorevisionists
 - @nonfactional: Add non-factional advisors
 - @rm_main: Remove advisors instead.
@@ -334,10 +324,10 @@ view-if: n_advisors < 3
 
 - #left_advisor
 
-@austromarxist
+@labor
 view-if: n_advisors < 3
 
-- #austromarxist_advisor
+- #labor_advisor
 
 @neorev
 view-if: neorevisionism > 0 and n_advisors < 3
@@ -528,40 +518,40 @@ tags: left_advisor
 Friedrich is now an advisor.
 
 
-# austromarxist
+# labor
 
 @add_leipart
 title: Theodor Leipart
-subtitle: Theodor Leipart is the leader of the ADGB, the German Trade Union Federation. {!<br><br>!}[? if difficulty < 0 : Actions - Organizing Workers, Addressing the Economic Crisis ?]
+subtitle: Theodor Leipart is the leader of the ADGB, the German Trade Union Federation. {!<br><br>!}Actions - Organizing Workers, Addressing the Economic Crisis
 is-card: true
 card-image: img/portraits/LeipartTheodor.jpg
-tags: austromarxist_advisor
+tags: labor_advisor
 view-if: leipart_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: leipart_advisor = 1; n_advisors += 1; austromarxist_strength += 5
+on-arrival: leipart_advisor = 1; n_advisors += 1; labor_strength += 5
 go-to: advisor_menu
 
 Theodor Leipart is now an advisor.
 
 @add_aufhauser
 title: Siegfried Aufhäuser
-subtitle: Siegfried Aufhäuser is the leader of the AfA-Bund, the white-collar trade union federation. {!<br><br>!}[? if difficulty < 0 : Actions - Organizing White-Collar Workers, Union-Party Coordination, Addressing the Economic Crisis ?]
+subtitle: Siegfried Aufhäuser is the leader of the AfA-Bund, the white-collar trade union federation. {!<br><br>!}Actions - Organizing White-Collar Workers, Union-Party Coordination, Addressing the Economic Crisis
 is-card: true
 card-image: img/portraits/AufhäuserSiegfried.jpg
-tags: austromarxist_advisor
+tags: labor_advisor
 view-if: aufhauser_advisor = 0 and n_advisors < 3
-on-arrival: aufhauser_advisor = 1; n_advisors += 1; austromarxist_strength += 5
+on-arrival: aufhauser_advisor = 1; n_advisors += 1; labor_strength += 5
 go-to: advisor_menu
 
 Siegfried Aufhäuser is now an advisor.
 
 @add_wissell
 title: Rudolf Wissell
-subtitle: Rudolf Wissell is an economist who has been the Labor Minister, and is an advocate for the interests of labor within the government. {!<br><br>!}[? if difficulty < 0 : Actions - Union-Party Coordination, Labor Rights ?]
+subtitle: Rudolf Wissell is an economist who has been the Labor Minister, and is an advocate for the interests of labor within the government. {!<br><br>!}Actions - Union-Party Coordination, Labor Rights
 is-card: true
 card-image: img/portraits/WissellRudolf.jpg
-tags: austromarxist_advisor
+tags: labor_advisor
 view-if: wissell_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: wissell_advisor = 1; n_advisors += 1; austromarxist_strength += 3
+on-arrival: wissell_advisor = 1; n_advisors += 1; labor_strength += 3
 go-to: advisor_menu
 
 Rudolf Wissell is now an advisor.
@@ -569,27 +559,15 @@ Rudolf Wissell is now an advisor.
 
 @add_woytinsky
 title: Wladimir Woytinsky
-subtitle: Wladimir Woytinsky is a former Russian Menshevik who is now the lead trade union economist. {!<br><br>!}[? if difficulty < 0 : Actions - Addressing the Economic Crisis, Carrying Out the Economic Plan ?]
+subtitle: Wladimir Woytinsky is a former Russian Menshevik who is now the lead trade union economist. {!<br><br>!}Actions - Addressing the Economic Crisis, Carrying Out the Economic Plan
 is-card: true
 card-image: img/portraits/WoytinskyWladimir.jpg
-tags: austromarxist_advisor
+tags: labor_advisor
 view-if: woytinsky_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: woytinsky_advisor = 1; n_advisors += 1; austromarxist_strength += 3
+on-arrival: woytinsky_advisor = 1; n_advisors += 1; labor_strength += 3
 go-to: advisor_menu
 
 Wladimir Woytinsky is now an advisor.
-
-@add_deutsch
-title: Julius Deutsch
-subtitle: Julius Deutsch is a great war veteran and one of the parties leading military experts. {!<br><br>!}[? if difficulty < 0 : Actions - Workers sports, Developing the Schutzbund, Finalizing the Schutzbund, Schutzbund affairs, Red Guard affairs, Volkswehr, Bundesheer  ?]
-is-card: true
-card-image: img/portraits/Julius_Deutsch.jpg
-tags: austromarxist_advisor
-view-if: deutsch_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: deutsch_advisor = 1; n_advisors += 1; austromarxist_strength += 3
-go-to: advisor_menu
-
-Julius Deutsch is now an advisor.
 
 
 # neorevisionist leaders
