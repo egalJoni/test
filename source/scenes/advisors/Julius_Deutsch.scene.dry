@@ -26,7 +26,6 @@ We have funded organizations like the [? if year == 1918: Östereichischer Arbei
 @develop_schutzbund
 title: Developing a defence organization
 subtitle: Deutsch can work on developing a defence organization of the [party.
-view-if: develop_sb_available = 1
 choose-if: advisor_action_timer = 0  
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6; sb_progress += 1;
