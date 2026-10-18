@@ -73,8 +73,11 @@ Q.reformists_resigned = 0;
 // have we discovered neorevisionism?
 Q.neorevisionism = 0;
 
+// party ideologies
+Q.sdap_ideology: "centrist";
+
 // party names
-Q.sdap_name: "<span style= "color: #dc021b;">SDAP</span>";
+Q.sdap_name: "SDAP";
 
 // advisors
 Q.Victor_alive = 1;
