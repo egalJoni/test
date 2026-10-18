@@ -21,7 +21,7 @@ Removing advisors will increase dissent from their faction of the party, while s
 
 @rm_main
 title: Remove advisors.
-tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, neorev_advisor, nonfactional_advisor 
+tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, neorev_advisor, nonfactional_advisor, austromarxist_advisor
 frequency: 1
 
 - #remove_advisor
@@ -535,7 +535,7 @@ title: Theodor Leipart
 subtitle: Theodor Leipart is the leader of the ADGB, the German Trade Union Federation. {!<br><br>!}[? if difficulty < 0 : Actions - Organizing Workers, Addressing the Economic Crisis ?]
 is-card: true
 card-image: img/portraits/LeipartTheodor.jpg
-tags: labor_advisor
+tags: austromarxist_advisor
 view-if: leipart_advisor = 0 and n_advisors < 3 and unions_independent = 0
 on-arrival: leipart_advisor = 1; n_advisors += 1; austromarxist_strength += 5
 go-to: advisor_menu
@@ -547,7 +547,7 @@ title: Siegfried Aufhäuser
 subtitle: Siegfried Aufhäuser is the leader of the AfA-Bund, the white-collar trade union federation. {!<br><br>!}[? if difficulty < 0 : Actions - Organizing White-Collar Workers, Union-Party Coordination, Addressing the Economic Crisis ?]
 is-card: true
 card-image: img/portraits/AufhäuserSiegfried.jpg
-tags: labor_advisor
+tags: austromarxist_advisor
 view-if: aufhauser_advisor = 0 and n_advisors < 3
 on-arrival: aufhauser_advisor = 1; n_advisors += 1; austromarxist_strength += 5
 go-to: advisor_menu
@@ -559,7 +559,7 @@ title: Rudolf Wissell
 subtitle: Rudolf Wissell is an economist who has been the Labor Minister, and is an advocate for the interests of labor within the government. {!<br><br>!}[? if difficulty < 0 : Actions - Union-Party Coordination, Labor Rights ?]
 is-card: true
 card-image: img/portraits/WissellRudolf.jpg
-tags: labor_advisor
+tags: austromarxist_advisor
 view-if: wissell_advisor = 0 and n_advisors < 3 and unions_independent = 0
 on-arrival: wissell_advisor = 1; n_advisors += 1; austromarxist_strength += 3
 go-to: advisor_menu
@@ -572,7 +572,7 @@ title: Wladimir Woytinsky
 subtitle: Wladimir Woytinsky is a former Russian Menshevik who is now the lead trade union economist. {!<br><br>!}[? if difficulty < 0 : Actions - Addressing the Economic Crisis, Carrying Out the Economic Plan ?]
 is-card: true
 card-image: img/portraits/WoytinskyWladimir.jpg
-tags: labor_advisor
+tags: austromarxist_advisor
 view-if: woytinsky_advisor = 0 and n_advisors < 3 and unions_independent = 0
 on-arrival: woytinsky_advisor = 1; n_advisors += 1; austromarxist_strength += 3
 go-to: advisor_menu
