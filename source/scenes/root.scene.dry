@@ -74,10 +74,11 @@ Q.reformists_resigned = 0;
 Q.neorevisionism = 0;
 
 // party ideologies
-Q.sdap_ideology: "centrist";
+Q.sdap_ideology = "centrist";
+Q.sdap_party_leader = "Victor Adler";
 
 // party names
-Q.sdap_name: "SDAP";
+Q.sdap_name = "SDAP";
 
 // advisors
 Q.Victor_alive = 1;
