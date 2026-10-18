@@ -74,7 +74,7 @@ Q.reformists_resigned = 0;
 Q.neorevisionism = 0;
 
 //party names
-Q.sdap_name: "<span style= "color: #dc021b;">SDAP</span>";
+Q.sdap_name: "<span style= "color: #dc021b;">SDAP<"/span>";
 
 // advisors
 Q.Victor_alive = 1;
