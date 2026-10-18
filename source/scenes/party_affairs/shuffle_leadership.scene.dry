@@ -519,7 +519,7 @@ is-card: true
 card-image: img/portraits/Friedrich_Adler.jpg
 view-if: Friedrich_Adler_advisor = 0 and n_advisors < 3 and Friedrich_sdap = 1
 choose-if: Friedrich_pardoned = 1 and Friedrich_sdap = 1
-unavailable-subtitle: [? if Friedrich_pardoned == 0: Friedrich Adler is currently serving his prison sentence ?][? if Friedrich_sdap = 0: Friedrich Adler is currently not part of the [? if sdap_ideology = "centrist" or sdap_ideology = "reformist" and spo_formed == 0: <span style= "color: #dc021b;">[+ sdap_name +]</span> ?][if sdap_ideology = "left" or sdap_ideology = "austromarxist" and spo_formed == 0: <span style= "color: #b82e2e;">[+ sdap_name +]</span> ?][? if spo_formed == 1: <span style= "color: #E52B50;">[+ spo_name +]</span> ?]?]
+unavailable-subtitle: [? if Friedrich_pardoned == 0: Friedrich Adler is currently serving his prison sentence ?][? if Friedrich_sdap = 0: Friedrich Adler is currently not part of the ?]
 face-image: img/portraits/Friedrich_Adler.jpg
 on-arrival: Friedrich_Adler_advisor = 1; n_advisors += 1
 go-to: advisor_menu
