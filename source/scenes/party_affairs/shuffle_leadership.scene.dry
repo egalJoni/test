@@ -528,7 +528,7 @@ is-card: true
 card-image: img/portraits/Julius_Deutsch.jpg
 tags: austromarxist_advisor
 view-if: deutsch_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: deustch_advisor = 1; n_advisors += 1; austromarxist_strength += 5
+on-arrival: deutsch_advisor = 1; n_advisors += 1; austromarxist_strength += 5
 go-to: advisor_menu
 
 Julius Deutsch is now an advisor.
