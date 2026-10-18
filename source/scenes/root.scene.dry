@@ -31,6 +31,9 @@ Q.week_actions = 0;
 Q.monarchy = 1;
 Q.reichsrat = 1;
 
+//whats the sdap called?
+Q.sdap_name = "<span style= "color: #dc021b;">SDAP</span>";
+
 // 0 = normal difficulty, 1 = hard mode, 2 = hard mode no saves
 Q.difficulty = 0;
 Q.historical_mode = 0;
