@@ -44,6 +44,7 @@ Chancellor: [+ chancellor +] ([+ chancellor_party +])
 [? if reichsrat == 1: <span style="color: #408000;">**Czech Agrarian Party**</span>: 37 Seats ?]
 [? if reichsrat == 1: <span style="color: #008015;">**Polish Peoples Party**</span>: 24 Seats ?]
 [? if reichsrat == 1: <span style="color: #0077B3;">**Ukrainian National Democratic Party**</span>: 23 Seats ?]
+[? if reichsrat == 1: <span style="color: #53554E;">**Others**</span>: 275 Seats ?]
 
 # 1928: 30, 1930: 25, 1932: 22
 {!<span class="tooltip-text" title="Social Democratic Party of Germany">SPD</span>!}: [+ spd_r +]%
