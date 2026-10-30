@@ -24,8 +24,13 @@ We can only hope that this battle goes well for our armies
 @result
 on-arrival: workers_sdap += 4; soldiers_sdap +=6
 face-image: img/Feind_Piave.jpg
-
-**Defeat**
+audio: if (morgenrot_playing == 1 && liedarbeit_playing == 0) {
+    music/Dem_Morgenrot_Entgegen.mp3
+} 
+if (morgenrot_playing == 1 && liedarbeit_playing == 1) {
+    shuffle music/Dem_Morgenrot_Entgegen.mp3 music/Das_lied_der_arbeit.mp3
+} 
+   
 
 The offensive ends in defeat. Although initial victories were made, our forces were eventually pushed back to their original postitions by the enemy. The heavy {!<span class="tooltip-text" title="over 80.000 wounded">casualties</span>!} on our side make another offensive on this front unlikely, as our army will likely be fighting on the defensive for the rest of the war.
 
