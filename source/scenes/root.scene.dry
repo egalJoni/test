@@ -27,6 +27,11 @@ Q.week = 1;
 // how many actions have been taken this month?
 Q.week_actions = 0;
 
+//hwat music is playing?
+Q.liedarbeit_playing = 1;
+Q.morgenrot_playing = 1;
+Q.stadtbruder_playing = 0;
+
 //is there a monarchy?
 Q.monarchy = 1;
 Q.reichsrat = 1;
